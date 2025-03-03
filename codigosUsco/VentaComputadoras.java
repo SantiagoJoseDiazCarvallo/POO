@@ -21,5 +21,6 @@ public class VentaComputadoras {
             valorDescuento = (cantidadPC * precioPC) * 0.6;
         }
         System.out.print("Valor total de los computadores vendidos: "+valorDescuento);
+        validarDescuento.close();
     }
 }

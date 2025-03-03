@@ -1,7 +1,6 @@
 import java.util.Scanner;
 //Tuve ayuda de una ia para la validación de datos, cambió algunas cosas del código :'D
-/*public class heladeria {
-    public static void main(String[] args) {
+/*public static void main(String[] args) {
     Scanner sc=new Scanner(System.in);
     int cantlimon=0,cantnuez=0,cantlulo=0,cantfresa=0,cantcrema=0;
     double ventalimon=0,ventanuez=0,ventalulo=0,ventafresa=0,ventacrema=0,ventaTotal=0;
@@ -93,8 +92,7 @@ import java.util.Scanner;
     System.out.println("fresa       "+cantfresa+"        "+(cantlimon*2000));
     System.out.println("crema        "+cantcrema+"         "+(cantlimon*3000));
     System.out.println("Ventas Totales="+((cantlimon*2500)+(cantnuez*2800)+(cantlulo*2600)+(cantfresa*2000)+(cantcrema*3000)));
-    }
-    } */
+    }*/
    //El código de abajo tiene validaciones, coloqué el primero para guiarme...
 public class Heladeria {
     public static void main(String[] args) {
