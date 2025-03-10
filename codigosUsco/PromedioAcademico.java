@@ -1,53 +1,18 @@
+import java.util.Locale;
 import java.util.Scanner;
-import java.util.Locale;//importada para permitir leer el "." como decimal
-
-public class ProgramaRendimientoAcademico {
-    /*
-     * Una institución educativa estableció un programa para estimular a los alumnos
-     * con buen
-     * rendimiento académico y que consiste en lo siguiente:
-     * ▪ Si el promedio es de 9.5 o más y el alumno es de tecnología, entonces este
-     * podrá cursar
-     * 55 créditos y se le hará un 25% de descuento.
-     * ▪ Si el promedio es mayor o igual a 9 pero menor que 9.5 y el alumno es de
-     * tecnología,
-     * entonces este podrá cursar 50 créditos y se le hará un 10% de descuento.
-     * ▪ Si el promedio es mayor que 7 y menor que 9 y el alumno es de tecnología,
-     * este podrá
-     * cursar 50 créditos y no tendrá ningún descuento.
-     * ▪ Si el promedio es de 7 o menor, el número de materias reprobadas es de 0 a
-     * 3 y el
-     * alumno es de tecnología, entonces podrá cursar 45 créditos y no tendrá
-     * descuento.
-     * 
-     * ▪ Si el promedio es de 7 o menor, el número de materias reprobadas es de 4 o
-     * más y el
-     * alumno es de tecnología, entonces podrá cursar 40 créditos y no tendrá ningún
-     * descuento.
-     * ▪ Si el promedio es mayor o igual a 9.5 y el alumno es de profesional,
-     * entonces podrá
-     * cursar 55 créditos y se le hará un 20% de descuento.
-     * ▪ Si el promedio es menor de 9.5 y el alumno es de profesional, entonces
-     * podrá cursar 55
-     * créditos y no tendrá descuento.
-     * Obtener el total que tendrá que pagar un alumno si el valor de la matrícula
-     * para alumnos de
-     * profesional es de $30.000 por cada cinco créditos y para alumnos de
-     * tecnología es de $18.000
-     * por cada cinco créditos.
-     */
+public class PromedioAcademico {
     public static void main(String[] args) {
+        double total;
+        total = Mensaje();
+        System.out.print("El total del valor a pagar por la matrícula del estudiante es de: " + total);
+    }
+    public static double Mensaje() {
         Scanner veriN = new Scanner(System.in);
         veriN.useLocale(Locale.US);// Para que tome el "." como valor decimal
         String rango;
-        double promN;
-        int materiasF;
-        int numCredit;
-        double totalCredit;
-        double totalValor = 0;
-        boolean rangoVeri = false;
-        boolean promVeri = false;
-        boolean materiasVeri = false;
+        int materiasF, numCredit;
+        double promN, totalCredit, totalValor = 0;
+        boolean rangoVeri = false, promVeri = false, materiasVeri = false;
         while (!rangoVeri) {// Mientras sea falsa, hacer...
             System.out.println("¿El alumno pertenece a una tecnología o a una profesional? (T/P)");
             rango = veriN.nextLine().toUpperCase();// para que convierta todo a mayúsculas
@@ -58,7 +23,7 @@ public class ProgramaRendimientoAcademico {
                         promN = veriN.nextDouble();
                         veriN.nextLine();// limpiar el buffer
                         if (promN < 0) {// qué pasa si el promedio es un valor negativo?
-                            System.out.println("Error: El promedio no puede ser un valor negativo");
+                            System.out.println("Error: El promedio no puede ser un valor negativo!");
                         } else {
                             if (promN >= 9.5) {
                                 numCredit = 55;
@@ -78,7 +43,6 @@ public class ProgramaRendimientoAcademico {
                                     if (veriN.hasNextInt()) {
                                         materiasF = veriN.nextInt();
                                         veriN.nextLine();
-
                                         if (materiasF >= 0) {
                                             if (materiasF <= 3) {
                                                 numCredit = 45;
@@ -134,7 +98,7 @@ public class ProgramaRendimientoAcademico {
                 System.out.println("Error: Tipo de dato no válido. Por favor ingrese las letras T o P!");
             }
         }
-        System.out.print("El total del valor a pagar por la matrícula del estudiante es de: " + totalValor);
         veriN.close();
+        return totalValor;
     }
 }
