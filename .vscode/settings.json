@@ -1,7 +1,9 @@
 {
     "java.project.sourcePaths": [
         "src",
-        "codigosUsco"
+        "codigosUsco",
+        "Ej_8b5",
+        "Alumno"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
